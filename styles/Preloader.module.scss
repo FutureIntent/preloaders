@@ -1,0 +1,37 @@
+@use 'preloaderModule';
+
+@mixin circle-animation($delay: 0s) {
+    animation: circle_offset 5s linear $delay infinite normal;
+}
+
+
+.preloader_wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .circle_0 {
+        @extend %circle-style;
+        @include circle-animation($delay: 0s);
+    }
+
+    .circle_1 {
+        @extend %circle-style;
+        @include circle-animation($delay: -4s);
+    }
+
+    .circle_2 {
+        @extend %circle-style;
+        @include circle-animation($delay: -3s);
+    }
+
+    .circle_3 {
+        @extend %circle-style;
+        @include circle-animation($delay: -2s);
+    }
+
+    .circle_4 {
+        @extend %circle-style;
+        @include circle-animation($delay: -1s);
+    }
+}

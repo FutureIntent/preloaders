@@ -1,0 +1,50 @@
+$circle-plane: calc((100% - 0.3rem * 6) / 5);
+$single_circle_offset: calc($circle-plane + 0.3rem);
+
+$circle_0_pos: 0.3rem;
+$circle_1_pos: calc($single_circle_offset * 1);
+$circle_2_pos: calc($single_circle_offset * 2);
+$circle_3_pos: calc($single_circle_offset * 3);
+$circle_4_pos: calc($single_circle_offset * 4);
+
+%circle-style {
+    width: $circle-plane;
+    height: $circle-plane;
+    border-radius: 50%;
+    background-color: white;
+    top: calc(50% - $circle-plane);
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+@keyframes circle_offset {
+    0% {
+        transform: scale(0);
+        left: $circle_0_pos;
+    }
+
+    20% {
+        transform: scale(1);
+        left: $circle_1_pos;
+    }
+
+    40% {
+        transform: scale(1);
+        left: $circle_2_pos;
+    }
+
+    60% {
+        transform: scale(1);
+        left: $circle_3_pos;
+    }
+
+    80% {
+        transform: scale(0);
+        left: $circle_4_pos;
+    }
+
+    100% {
+        transform: scale(0);
+        left: $circle_0_pos;
+    }
+}
